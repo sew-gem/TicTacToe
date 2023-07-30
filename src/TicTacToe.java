@@ -146,4 +146,30 @@ public class TicTacToe {
         tile.setBackground(Color.gray);
         textLabel.setText("Tie!");
     }
+
+    //restart game
+    JButton restart = new JButton();
+    
+    for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                JButton restart = new JButton();
+                board[r][c] = restart;
+                boardPanel.add(restart);
+
+                restart.setBackground(Color.darkGray);
+                restart.setForeground(Color.white);
+                restart.setFont(new Font("Arial", Font.BOLD, 120));
+                restart.setFocusable(false);
+                // tile.setText(currentPlayer);
+
+                restart.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        if (gameOver) return;
+                        JButton restart = (JButton) e.getSource();
+
+                    }
+                });
+            }
+        }
+    }
 }
